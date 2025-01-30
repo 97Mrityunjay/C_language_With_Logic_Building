@@ -9,42 +9,22 @@
     switch(month)
     {
     case 1:
-        printf("31 days");
-        break;
-
-    case 2:
-         printf("28 or 29 days");
-         break;
     case 3:
+    case 5:
+    case 7:    
+    case 8:  
+    case 10:    
+    case 12:
          printf("31 days");
          break;
     case 4:
-         printf("30 days");
-         break;
-    case 5:
-         printf("31 days");
-         break;
     case 6:
-         printf("30 days");
-         break;
-    case 7:
-         printf("31 days");
-         break;
-
-    case 8:
-         printf("31 days");
-         break;
     case 9:
-         printf("30 days");
-         break;
-    case 10:
-         printf("31 days");
-         break;
     case 11:
          printf("30 days");
          break;
-    case 12:
-         printf("31 days");
+    case 2:
+         printf("28 or 29 days");
          break;
     default:
         printf("Invalid month number");
@@ -54,10 +34,11 @@
 }*/
 
 //Q2. Write a menu driven program with following options:1.Addition 2.Subtraction 3. Multiplication 4.Division 5.Exit
-/*int main()
+int main()
 {
     int option;
     int a,b;
+    float div;
     while(1)
     {
         printf("\n1.Addition\n");
@@ -65,39 +46,37 @@
         printf("3.Multiplication\n");
         printf("4.Division\n");
         printf("5.Exit\n");
-        printf("Enter your choice ");
+        printf("\n\nEnter your choice ");
         scanf("%d",&option);
+        if(option>4);
+        else
+        {
+          printf("Enter two numbers ");
+          scanf("%d%d",&a,&b);
+        }
         switch(option)
         {
-            case 1:
-                printf("Enter two numbers ");
-                scanf("%d%d",&a,&b);
+            case 1:   
                 printf("Addition of %d and %d is %d",a,b,a+b);
                 break;
             case 2:
-                printf("Enter two numbers ");
-                scanf("%d%d",&a,&b);
-                printf("Subtraction of %d and %d is %d",a,b,a-b);
+                printf("Difference between %d and %d is %d",a,b,a-b);
                 break;
             case 3:
-                printf("Enter two numbers ");
-                scanf("%d%d",&a,&b);
                 printf("Multiplication of %d and %d is %d",a,b,a*b);
                 break;
             case 4:
-                 printf("Enter two numbers ");
-                 scanf("%d%d",&a,&b);
-                 printf("Division of %d and %d is %d",a,b,a/b);
+                 div=a*1.0/b;
+                 printf("Division of %d and %d is %f",a,b,div);
                  break;
             case 5:
                  exit(0);
-                 break;
             default:
-                 printf("Invalid option");
+                 printf("Invalid option!Retry");
         }
     }
     return 0;
-}*/
+}
 
 //Q3. Write a program which takes the day number of a week and displays a unique greeting message for the day
 /*int main()
@@ -152,31 +131,31 @@
     printf("4.Exit\n");
     printf("Enter your choice ");
     scanf("%d",&option);
+    if(option==4);
+    else
+    {
+      printf("Enter length of sides of triangle ");
+      scanf("%d%d%d",&a,&b,&c);
+      if(a+b>c&&a+c>b&&b+c>a);
+      else
+        option=5;
+    }
     switch(option)
     {
         case 1:
-             printf("Enter lengths of sides of triangle");
-             scanf("%d%d%d",&a,&b,&c);
+            //  printf("Enter lengths of sides of triangle");
+            //  scanf("%d%d%d",&a,&b,&c);
              if(a==b||a==c||b==c)
-               printf("Given set of three numbers are length of Isosceles Triangle");
+               printf("Given set of three numbers are lengths of Isosceles Triangle");
              else
-              printf("Given set of three numbers are not the length of  Isosceles Triangle"); 
+              printf("Given set of three numbers are not the lengths of  Isosceles Triangle"); 
             break;
         case 2:
-            printf("Enter lengths of sides of triangle");
-            scanf("%d%d%d",&a,&b,&c);
-            h=(a>b)?(a>c?a:c):(b>c?b:c);
-            if(h==a&&b*b+c*c==a*a)
+            // printf("Enter lengths of sides of triangle");
+            // scanf("%d%d%d",&a,&b,&c);
+            if(a*a+b*b==c*c||a*a+c*c==b*b||b*b+c*c==a*a)
             {
                   printf("Given set of three numbers are length of Right Angled Triangle");
-            }
-            else if(h==b&&a*a+c*c==b*b)
-            {
-                  printf("Given set of three numbers are length of Right Angled Triangle");   
-            }
-            else if(h==c&&a*a+b*b==c*c)
-            {
-                  printf("Given set of three numbers are lengths of Right Angled Triangle");
             }
             else
             {
@@ -184,8 +163,8 @@
             }
             break;
         case 3:
-            printf("Enter the lengths of the sides of triangle ");
-            scanf("%d%d%d",&a,&b,&c);
+            // printf("Enter the lengths of the sides of triangle ");
+            // scanf("%d%d%d",&a,&b,&c);
             if(a==b&&a==c)
               printf("Given set of three numbers are lengths of Equilateral Triangle");
             else
@@ -193,8 +172,11 @@
             break;
         case 4:
              exit(0);
+        case 5:
+             printf("You have entered invalid lengths of triangle!Retry");
+             break;
        default:
-             printf("Invalid choice");
+             printf("Invalid choice!Retry");
     }
   }
   return 0;
@@ -210,7 +192,7 @@
       else
         printf("Invalid");
  */
-int main()
+/*int main()
 {
     int var;
     printf("Enter a number ");
@@ -230,4 +212,4 @@ int main()
               printf("Invalid");
     }
     return 0;
-}
+}*/

@@ -52,16 +52,9 @@
         k=5-i;
         for(j=1;j<=7;j++)
         {
-            if(j>=5-i&&j<=3+i)
+            if(j>=5-i&&j<=3+i&&(i+j)%2!=0)
             {
-                if(i%2!=j%2)
-                {
-                   printf("*");
-                }
-                else
-                {
-                  printf(" ");
-                }
+                printf("*");
             }
             else
             {
@@ -132,20 +125,41 @@
         k=65;
         for(j=1;j<=7;j++)
         {
-            if(j>=i)
-            {
-               if(j<4)
+               if(j>=i&&j<=8-i)
                {
-                 printf("%c",k++);
-               }
-               else if(j<=8-i)
-               {
-                 printf("%c",k--);
+                 printf("%c",k);
+                 j<4?k++:k--;
                }
                else
                {
                 printf(" ");
                }
+        }
+        printf("\n");
+    }
+}*/
+//Q7.
+int main()
+{
+    int i,j,k;
+    for(i=1;i<=5;i++)
+    {
+        k=1;
+        for(j=1;j<=9;j++)
+        {
+            if(j>=6-i&&j<=4+i)
+            {
+                if((i+j)%2==0)
+                {
+                    printf("%d",k);
+                    j<5?k++:k--;
+                }
+                else
+                {
+                    if(j==5)
+                     k--;
+                    printf(" ");
+                }
             }
             else
             {
@@ -154,8 +168,7 @@
         }
         printf("\n");
     }
-}*/
-
+}
 //Q8
 /*int main()
 {
@@ -164,11 +177,7 @@
     {
         for(j=1;j<=7;j++)
         {
-            if(i==1)
-              printf("*");
-            else if(j<=5-i)
-              printf("*");
-            else if(j>=i+3)
+            if(j<=5-i||j>=3+i)
               printf("*");
             else
               printf(" ");
@@ -187,23 +196,15 @@
         k=1;
         for(j=1;j<=7;j++)
         {
-            if(i==1)
+            if(j<=5-i||j>=3+i)
             {
-                if(j<5-i)
-                  printf("%d",k++);
-                else if(j>=3+i)
-                  printf("%d",k--);
-            }
-            else if(j<=5-i)
-            {
-               printf("%d",k++); 
-            }
-            else if(j>=3+i)
-            {
-                printf("%d",--k);
+               printf("%d",k); 
+               j<4?k++:k--;
             }
             else
             {
+                if(j==4)
+                  k--;
                 printf(" ");
             }
         }
@@ -213,7 +214,7 @@
 }*/
 
 //Q10.
-int main()
+/*int main()
 {
     int i,j,k;
     for(i=1;i<=4;i++)
@@ -221,27 +222,19 @@ int main()
         k=65;
         for(j=1;j<=7;j++)
         {
-            if(i==1)
+            if(j<=5-i||j>=3+i)
             {
-                if(j<5-i)
-                 printf("%c",k++);
-                else if(j>=3+i)
-                 printf("%c",k--);
-            }
-            else if(j<=5-i)
-            {
-                printf("%c",k++);
-            }
-            else if(j>=3+i)
-            {
-                printf("%c",--k);
+                printf("%c",k);
+                j<4?k++:k--;
             }
             else
             {
+                if(j==4)
+                 k--;
                 printf(" ");
             }
         }
         printf("\n");
     }
     return 0;
-}
+}*/
