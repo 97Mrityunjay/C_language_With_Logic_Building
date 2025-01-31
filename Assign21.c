@@ -21,11 +21,9 @@ float Simple_Interest(float p,float r,float t)
 //Q3. Write a function to check whether a given number is even or odd.Return 1 if the number is even,otherwise return 0(TSRS)
 int isEvenOdd(int n)
 {
-    int val;
-    val = ((n&1)==0)?1:0;
-    return val;
+   return (n&1)==0;
 }
-//Q4. Write a function to print N natural numbers
+//Q4. Write a function to print First N natural numbers(TSRN)
 void printNaturalNumbers(int n)
 {
     int i;
@@ -35,7 +33,7 @@ void printNaturalNumbers(int n)
     }
 }
 
-//Q5. Write a function to print first N odd natural numbers
+//Q5. Write a function to print first N odd natural numbers(TSRN)
 void printOddNaturalNumbers(int n)
 {
    int i;
@@ -65,13 +63,13 @@ int main()
     */
 
     // Check whether number is even or odd
-    /*int num,res;
+    int num,res;
     printf("Enter a number ");
     scanf("%d",&num);
     res=isEvenOdd(num);
     (res==1)?printf("%d is an even number",num):printf("%d is an odd number",num);
-    */
-   //Print N natural numbers
+    
+   //Print First N natural numbers
    /*int num;
    printf("Enter a number ");
    scanf("%d",&num);
@@ -79,9 +77,9 @@ int main()
    */
 
   //Print first N odd natural numbers
-  int num;
+  /*int num;
   printf("Enter a number ");
   scanf("%d",&num);
-  printOddNaturalNumbers(num);
+  printOddNaturalNumbers(num);*/
   return 0;
 }
