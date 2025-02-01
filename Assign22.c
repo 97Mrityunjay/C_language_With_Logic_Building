@@ -63,6 +63,7 @@ int main()
     res=factorial(num);
     printf("Factorial of %d is %d",num,res);
      */
+    
     /*
     int num,r,res;
     printf("Enter total number of items ");
@@ -81,6 +82,7 @@ int main()
     res=numberOfArrangements(num,r);
     printf("Number of Arrangements=%d",res);
     */
+
    /*int n,d,res;
    printf("Enter a number ");
    scanf("%d",&n);
