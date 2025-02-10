@@ -1,6 +1,6 @@
 #include<stdio.h>
 int factorial(int);
-int HCF_Of_Two_Numbers(int,int,int);
+int HCF_Of_Two_Numbers(int,int);
 void Print_First_N_Terms_Of_Fibonacci_Series(int,int,int,int);
 int Count_Digits(int);
 int Power_Of_Any_Number(int,int);
@@ -13,13 +13,28 @@ int factorial(int num)
 }
 
 /*Q2.Write a recursive function to calculate HCF of two numbers*/
-int HCF_Of_Two_Numbers(int num1,int num2,int HCF)
+int HCF_Of_Two_Numbers(int a,int b)
 {
-    if(num1%HCF==0&&num2%HCF==0)
+    if(a>b)
     {
-        return HCF;
+        if(a%b==0)
+        {
+            return b;
+        }
+        return HCF_Of_Two_Numbers(b,a%b);
     }
-    return HCF_Of_Two_Numbers(num1,num2,HCF-1);
+    else if(b>a)
+    {
+        if(b%a==0)
+        {
+            return a;
+        }
+        return HCF_Of_Two_Numbers(a,b%a);
+    }
+    else
+    {
+        return b;
+    }
 }
 
 /*Q3.Write a recursive function to print first N terms of Fibonacci series*/
@@ -69,11 +84,10 @@ int main()
     // printf("First %d terms of Fibonacci Series\n",n);
     // Print_First_N_Terms_Of_Fibonacci_Series(n,a,b,c);
     
-    // int num1,num2,min,res;
-    // printf("Enter two numbers");
-    // scanf("%d%d",&num1,&num2);
-    // min=num1<num2?num1:num2;
-    // res=HCF_Of_Two_Numbers(num1,num2,min);
-    // printf("HCF of %d and %d is %d",num1,num2,res);
+    int num1,num2,res;
+    printf("Enter two numbers");
+    scanf("%d%d",&num1,&num2);
+    res=HCF_Of_Two_Numbers(num1,num2);
+    printf("HCF of %d and %d is %d",num1,num2,res);
     return 0;
 }

@@ -44,21 +44,23 @@ int isPrime(int num)
 int nextPrimeNumber(int num)
 {
     int divisor,res;
-    for(;1;)
-    {
-        for(divisor=2;divisor<num+1;divisor++)
-        {
-            if((num+1)%divisor==0)
-              break;
-        }
-        if(divisor==num+1)
-        {
-          res=num+1;
-          break;
-        }
-        num++;
-    }
-    return res;
+    // for(;1;)
+    // {
+    //     for(divisor=2;divisor<num+1;divisor++)
+    //     {
+    //         if((num+1)%divisor==0)
+    //           break;
+    //     }
+    //     if(divisor==num+1)
+    //     {
+    //       res=num+1;
+    //       break;
+    //     }
+    //     num++;
+    // }
+    // return res;
+    while(!isPrime(num=num+1));
+    return num;
 }
 
 /*Q5.Write a function to print first N prime numbers(TSRN)*/
@@ -66,27 +68,23 @@ void printFirstNPrimeNumbers(int num)
 {
     int n=2,divisor,count;
     printf("First %d prime numbers:\n",num);
-    for(count=0;count!=num;)
+    for(;count!=num;)
     {
-        for(divisor=2;divisor<n;divisor++)
-        {
-            if(n%divisor==0)
-             break;
-        }
-        if(divisor==n)
-        {
-         printf("%d ",n);
-         count++;
-        }
-        n++;
+       if(isPrime(n))
+       {
+        printf("%d ",n);
+        count++;
+       }
+       n++;
     }
 }
 
 int main()
 {
-  int n;
+  int n,res;
   printf("Enter a number ");
   scanf("%d",&n);
-  printFirstNPrimeNumbers(n);
+  res=nextPrimeNumber(n);
+  printf("Next prime number of %d is %d",n,res);
   return 0;
 }
