@@ -21,7 +21,7 @@ int HCF_Of_Two_Numbers(int a,int b)
         {
             return b;
         }
-        return HCF_Of_Two_Numbers(b,a%b);
+        return HCF_Of_Two_Numbers(a%b,b);
     }
     else if(b>a)
     {
