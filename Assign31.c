@@ -3,6 +3,7 @@ int Find_Greatest_Number(int[],int);
 int Find_Smallest_Number(int[],int);
 void sortArray(int[],int);
 void rotateArray(int[],int,int,char);
+int f1(int[],int);
 /*Q1.Write a function to find the greatest number from the given array of any size(TSRS)*/
 int Find_Greatest_Number(int a[],int size)
 {
@@ -57,28 +58,24 @@ void rotateArray(int a[],int size,int n,char d)
     int temp1,temp,i,j;
     if(d=='l')
     {
-        temp=a[size-1];
         for(i=1;i<=n;i++)
         {
-            for(j=size-2;j>=0;j--)
+            temp=a[0];
+            for(j=0;j<size-1;j++)
             {
-                temp1=a[j];
-                a[j]=temp;
-                temp=temp1;
+                a[j]=a[j+1];
             }
             a[size-1]=temp;
         }
     }
     else if(d=='r')
     {
-        temp=a[0];
         for(i=1;i<=n;i++)
         {
-            for(j=1;j<size;j++)
+            temp=a[size-1];
+            for(j=size-1;j>0;j--)
             {
-                temp1=a[j];
-                a[j]=temp;
-                temp=temp1;
+                a[j]=a[j-1];
             }
             a[0]=temp;
         }
@@ -90,6 +87,17 @@ void rotateArray(int a[],int size,int n,char d)
     }
 }
 
+/*Q5. Write a function to find the first occurrence of adjacent duplicate values in the array.Function has to return the value of the element */
+int f1(int arr[],int size)
+{
+    int i;
+    for(i=0;i<size-1;i++)
+    {
+        if(arr[i]==arr[i+1])
+          return arr[i];
+    }
+    return -1;
+}
 int main()
 {
     /*int n,i;
@@ -104,7 +112,7 @@ int main()
     Sort(arr,n);
     */
     int size=10,arr[size],i,n;
-    char d='l';
+    char d='r';
     printf("Enter %d numbers ",size);
     for(i=0;i<size;i++)
     {
