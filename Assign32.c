@@ -1,4 +1,3 @@
-#include "Assign31.c"
 #include<stdio.h>
 int f1(int[],int,int,int);
 /*Q1.Write a function to swap two elements of given array with specified indices*/
@@ -10,6 +9,31 @@ int f1(int arr[],int size,int index1,int index2)
         temp=arr[index1];
         arr[index1]=arr[index2];
         arr[index2]=temp;
+    }
+}
+void sortArray(int a[],int size)
+{
+    int r,j,temp;
+    for(r=1;r<size;r++)
+    {
+        // for(j=i+1;j<size;j++)
+        // {
+        //     if(a[j]<a[i])
+        //     {
+        //         temp=a[j];
+        //         a[j]=a[i];
+        //         a[i]=temp;
+        //     }
+        // }
+        for(j=0;j<size-r;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
     }
 }
 /*Q2.Write a function to count a total number of duplicate elements in an array.(Means elements that occurs 2 times in an array)*/
@@ -48,9 +72,27 @@ void printAllUniqueElements(int a[],int size)
     }
 
 }
+/*Q4. Write a function to merge two arrays of the same size sorted in descending order*/
+void Sort_Elements_In_Descending_Order(int a[],int size)
+{
+   int r,j,temp;
+   for(r=1;r<size;r++)
+   {
+      for(j=0;j<size-r;j++)
+      {
+         if(a[j]<a[j+1])
+         {
+           temp=a[j];
+           a[j]=a[j+1];
+           a[j+1]=temp;
+         }
+      }
+   }
+}
 int main()
 {
-    int arr[]={3,5,5,3,2,5,2,9,8,2,5,9};
-    printAllUniqueElements(arr,12);
+    int arr1[]={8,15,12,18,17,20,10};
+    int arr2[]={5,6,7,9,2,4,3};
+    mergeTwoArrays(arr1,arr2,7);
     return 0;
 }
