@@ -79,12 +79,12 @@ void printFirstNPrimeNumbers(int num)
     }
 }
 
-int main()
-{
-  int n,res;
-  printf("Enter a number ");
-  scanf("%d",&n);
-  res=nextPrimeNumber(n);
-  printf("Next prime number of %d is %d",n,res);
-  return 0;
-}
+// int main()
+// {
+//   int n,res;
+//   printf("Enter a number ");
+//   scanf("%d",&n);
+//   res=nextPrimeNumber(n);
+//   printf("Next prime number of %d is %d",n,res);
+//   return 0;
+// }

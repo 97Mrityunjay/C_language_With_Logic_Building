@@ -55,46 +55,46 @@ void primeFactors(int num)
       }
    }   
 }
-int main()
-{
-    /*int num,res;
-    printf("Enter a number ");
-    scanf("%d",&num);
-    res=factorial(num);
-    printf("Factorial of %d is %d",num,res);
-     */
+// int main()
+// {
+//     /*int num,res;
+//     printf("Enter a number ");
+//     scanf("%d",&num);
+//     res=factorial(num);
+//     printf("Factorial of %d is %d",num,res);
+//      */
     
-    /*
-    int num,r,res;
-    printf("Enter total number of items ");
-    scanf("%d",&num);
-    printf("Enter number of items to be selected at a time ");
-    scanf("%d",&r);
-    res=numberOfCombinations(num,r);
-    printf("Number of possible combinations=%d",res);
-    */
+//     /*
+//     int num,r,res;
+//     printf("Enter total number of items ");
+//     scanf("%d",&num);
+//     printf("Enter number of items to be selected at a time ");
+//     scanf("%d",&r);
+//     res=numberOfCombinations(num,r);
+//     printf("Number of possible combinations=%d",res);
+//     */
 
-    /*int num,r,res;
-    printf("Enter total number of items ");
-    scanf("%d",&num);
-    printf("Enter number of items to be selected at a time ");
-    scanf("%d",&r);
-    res=numberOfArrangements(num,r);
-    printf("Number of Arrangements=%d",res);
-    */
+//     /*int num,r,res;
+//     printf("Enter total number of items ");
+//     scanf("%d",&num);
+//     printf("Enter number of items to be selected at a time ");
+//     scanf("%d",&r);
+//     res=numberOfArrangements(num,r);
+//     printf("Number of Arrangements=%d",res);
+//     */
 
-   /*int n,d,res;
-   printf("Enter a number ");
-   scanf("%d",&n);
-   printf("Enter a digit ");
-   scanf("%d",&d);
-   res=f1(n,d);
-   (res==1)?printf("%d contains %d",n,d):printf("%d does not contain %d",n,d);
-   */
+//    /*int n,d,res;
+//    printf("Enter a number ");
+//    scanf("%d",&n);
+//    printf("Enter a digit ");
+//    scanf("%d",&d);
+//    res=f1(n,d);
+//    (res==1)?printf("%d contains %d",n,d):printf("%d does not contain %d",n,d);
+//    */
 
-   int num;
-   printf("Enter a number ");
-   scanf("%d",&num);
-   primeFactors(num);
-   return 0;
-}
+//    int num;
+//    printf("Enter a number ");
+//    scanf("%d",&num);
+//    primeFactors(num);
+//    return 0;
+// }
