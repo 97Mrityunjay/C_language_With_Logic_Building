@@ -8,17 +8,6 @@ void Sum_Of_First_N_Terms(int);
 void Pascal_Triangle(int);
 // int factorial(int);
 /*Q1.Write a function to print all prime numbers between two given numbers(TSRN)*/
-// int isPrime(int n)
-// {
-//     int divisor=2;
-//     while(divisor<n)
-//     {
-//         if(n%divisor==0)
-//          return 0;
-//         divisor++;
-//     }
-//     return 1;
-// }
 void printPrimeNumbers(int num1,int num2)
 {
     int divisor,num;
@@ -66,19 +55,21 @@ void Sum_Of_First_N_Terms(int n)
 /*3. Write a function to print PASCAL Triangle*/
 void Pascal_Triangle(int lines)
 {
-    int i,j,n,r;
+    int i,j,n,r,k;
     for(i=1,n=0;i<=lines;i++,n++)
     {
+        k=1;
         for(j=1,r=0;j<=2*lines-1;j++)
         {
-            if(j>=lines+1-i && j<=lines-1+i && (i+j)%2)
+            if(j>=lines+1-i && j<=lines-1+i && k)
             {
-                
                 printf("%2d",numberOfCombinations(n,r++));
+                k=0;
             }
-            else 
+            else
             {
                 printf(" ");
+                k=1;
             }
         }
         printf("\n");
@@ -123,6 +114,6 @@ int main()
     // printf("Enter a number ");
     // scanf("%d",&num);
     // Sum_Of_First_N_Terms(num);
-    Pascal_Triangle(6);
+    Pascal_Triangle(7);
     return 0;
 }
