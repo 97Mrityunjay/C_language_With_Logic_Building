@@ -71,9 +71,12 @@ void selectionSort(int a[],int size)
             if(a[min]>a[i])
              min=i;
         }
+       if(min!=r) 
+       { 
         temp=a[r];
         a[r]=a[min];
         a[min]=temp;
+       }
     }   
 }
 /*Q4.*/
