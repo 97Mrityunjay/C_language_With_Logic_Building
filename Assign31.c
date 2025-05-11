@@ -60,7 +60,22 @@ void sortArray(int a[],int size)
     //     printf("%d ",a[j]);
     // }
 }
-
+void selectionSort(int a[],int size)
+{
+    int r,i,min,temp;
+    for(r=0;r<size-1;r++)
+    {
+        min=r;
+        for(i=r+1;i<size;i++)
+        {
+            if(a[min]>a[i])
+             min=i;
+        }
+        temp=a[r];
+        a[r]=a[min];
+        a[min]=temp;
+    }   
+}
 /*Q4.*/
 void rotateArray(int a[],int size,int n,char d)
 {
@@ -107,18 +122,18 @@ int f2(int arr[],int size)
     }
     return -1;
 }
-/*int main()
+int main()
 {
-    int n,i;
-    printf("Enter a number ");
-    scanf("%d",&n);
-    int arr[n];
-    printf("Enter %d numbers ",n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
-    }
-    sortArray(arr,n);
+    // int n,i;
+    // printf("Enter a number ");
+    // scanf("%d",&n);
+    // int arr[n];
+    // printf("Enter %d numbers ",n);
+    // for(i=0;i<n;i++)
+    // {
+    //     scanf("%d",&arr[i]);
+    // }
+    // sortArray(arr,n);
     
     // int size=10,arr[size],i,n;
     // char d='r';
@@ -130,5 +145,16 @@ int f2(int arr[],int size)
     // printf("Enter position ");
     // scanf("%d",&n);
     // rotateArray(arr,size,n,d);
-    return 0;
-}*/
+    int a[10],i;
+    printf("Enter 10 numbers ");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    selectionSort(a,10);
+    printf("After sorting in ascending order, elements are:\n");
+    for(i=0;i<10;i++)
+     printf("%d ",a[i]); 
+    
+    return 0;   
+}
