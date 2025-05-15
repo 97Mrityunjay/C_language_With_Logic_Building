@@ -4,6 +4,8 @@ int Find_Smallest_Number(int[],int);
 void sortArray(int[],int);
 void rotateArray(int[],int,int,char);
 int f2(int[],int);
+void selectionSort(int[],int);
+void insertionSort(int[],int);
 /*Q1.Write a function to find the greatest number from the given array of any size(TSRS)*/
 int Find_Greatest_Number(int a[],int size)
 {
@@ -78,6 +80,21 @@ void selectionSort(int a[],int size)
         a[min]=temp;
        }
     }   
+}
+void insertionSort(int arr[],int size)
+{
+    int i,j,key;
+    for(i=1;i<size;i++)
+    {
+        key=arr[i];
+        j=i-1;
+        while(j>=0 && arr[j]>key)
+        {
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
 }
 /*Q4.*/
 void rotateArray(int a[],int size,int n,char d)
@@ -154,7 +171,7 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-    selectionSort(a,10);
+    insertionSort(a,10);
     printf("After sorting in ascending order, elements are:\n");
     for(i=0;i<10;i++)
      printf("%d ",a[i]); 
