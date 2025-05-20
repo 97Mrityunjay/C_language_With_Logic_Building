@@ -47,11 +47,11 @@ int countTotalNumberOfDuplicateElements(int a[],int size)
         if(a[i]>a[k])
         {
             b[j]=a[i];
-            j++;
             k=i;
+            j++;
         }
-    }
-    printf("Total number of duplicate elements=%d",size-j);
+    } 
+    return size-j;
 }
 /*Q3.Write a function to print all unique elements in Array*/
 void printAllUniqueElements(int a[],int size)
@@ -91,8 +91,12 @@ void Sort_Elements_In_Descending_Order(int a[],int size)
 }
 int main()
 {
-    int arr1[]={8,15,12,18,17,20,10};
-    int arr2[]={5,6,7,9,2,4,3};
-    mergeTwoArrays(arr1,arr2,7);
+    int arr[10],i,res;
+    printf("Enter 10 numbers\n");
+    for(i=0;i<10;i++)
+      scanf("%d",&arr[i]);
+    res=countTotalNumberOfDuplicateElements(arr,10);
+    printf("Total number of duplicate elements\n");
+    printf("%d",res);
     return 0;
 }
