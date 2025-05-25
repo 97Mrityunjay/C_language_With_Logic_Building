@@ -1,5 +1,6 @@
 #include<stdio.h>
 int f1(int[],int,int,int);
+void megeArray(int[],int[],int);
 /*Q1.Write a function to swap two elements of given array with specified indices*/
 int f1(int arr[],int size,int index1,int index2)
 {
@@ -89,14 +90,85 @@ void Sort_Elements_In_Descending_Order(int a[],int size)
       }
    }
 }
+void mergeArray(int arr1[],int arr2[],int arr3[],int size)
+{
+    int k,i=0,j=0;
+    Sort_Elements_In_Descending_Order(arr1,size);
+    Sort_Elements_In_Descending_Order(arr2,size);
+    for(k=0; i<size && j<size;k++)
+    {
+        if(arr1[i]>arr2[j])
+        {
+            arr3[k]=arr1[i];
+            i++;
+        }
+        else
+        {
+            arr3[k]=arr2[j];
+            j++;
+        }
+    }
+    while(i<size)
+    {
+        arr3[k]=arr1[i];
+        k++;
+        i++;
+    }
+    while(j<size)
+    {
+        arr3[k]=arr2[j];
+        k++;
+        j++;
+    }
+}
+/*Q5.Write a function to count frequency of each elements of an array*/
+void countFrequency(int arr[],int size)
+{
+    int k,j,count=0;
+    sortArray(arr,size);
+    for(k=0;k<size-1;k=k+count)
+    {
+        count=0;
+        if(arr[k]!=arr[k+1])
+        {
+            count++;
+            printf("%d->%d\n",arr[k],count);
+        }
+        else
+        {
+            j=k+1;
+            while(j<size && arr[k]==arr[j])
+            {
+                count++;
+                j++;
+            }
+            count++;
+            printf("%d->%d\n",arr[k],count);
+        }
+    }
+    if(k==size-1)
+    {
+        count=1;
+        printf("%d->%d\n",arr[k],count);
+    }
+   
+}
 int main()
 {
-    int arr[10],i,res;
-    printf("Enter 10 numbers\n");
-    for(i=0;i<10;i++)
-      scanf("%d",&arr[i]);
-    res=countTotalNumberOfDuplicateElements(arr,10);
-    printf("Total number of duplicate elements\n");
-    printf("%d",res);
+    // int arr[10],i,res;
+    // printf("Enter 10 numbers\n");
+    // for(i=0;i<10;i++)
+    //   scanf("%d",&arr[i]);
+    // res=countTotalNumberOfDuplicateElements(arr,10);
+    // printf("Total number of duplicate elements\n");
+    // printf("%d",res);
+    // int arr1[10]={5,6,7,8,9,10,12,15,18,20};
+    // int arr2[10]={19,25,28,29,30,32,35,40,45,50};
+    // int arr3[20],i;
+    // mergeArray(arr1,arr2,arr3,10);
+    // for(i=0;i<20;i++)
+    //   printf("%d ",arr3[i]);
+    int arr[]={2,3,4,5,6,7,8};
+    countFrequency(arr,7);
     return 0;
 }
