@@ -1,6 +1,6 @@
 #include<stdio.h>
 int f1(int[],int,int,int);
-void megeArray(int[],int[],int);
+void mergeArray(int[],int[],int[],int);
 /*Q1.Write a function to swap two elements of given array with specified indices*/
 int f1(int arr[],int size,int index1,int index2)
 {
@@ -122,37 +122,55 @@ void mergeArray(int arr1[],int arr2[],int arr3[],int size)
     }
 }
 /*Q5.Write a function to count frequency of each elements of an array*/
+// void countFrequency(int arr[],int size)
+// {
+//     int k,j,count=0;
+//     sortArray(arr,size);
+//     for(k=0;k<size-1;k=k+count)
+//     {
+//         count=0;
+//         if(arr[k]!=arr[k+1])
+//         {
+//             count=1;
+//             printf("%d->%d\n",arr[k],count);
+//         }
+//         else
+//         {
+//             j=k+1;
+//             while(j<size && arr[k]==arr[j])
+//             {
+//                 count++;
+//                 j++;
+//             }
+//             count++;
+//             printf("%d->%d\n",arr[k],count);
+//         }
+//     }
+//     if(k==size-1)
+//     {
+//        
+//         printf("%d->%d\n",arr[k],count);
+//     }
+   
+// }
 void countFrequency(int arr[],int size)
 {
-    int k,j,count=0;
+    int k,i,count=0;
     sortArray(arr,size);
-    for(k=0;k<size-1;k=k+count)
+    for(i=0,k=0;i<size;i++)
     {
-        count=0;
-        if(arr[k]!=arr[k+1])
-        {
-            count++;
-            printf("%d->%d\n",arr[k],count);
-        }
+        if(arr[i]==arr[k])
+          count++;
         else
         {
-            j=k+1;
-            while(j<size && arr[k]==arr[j])
-            {
-                count++;
-                j++;
-            }
-            count++;
             printf("%d->%d\n",arr[k],count);
+            k=i;
+            count=1;
         }
     }
-    if(k==size-1)
-    {
-        count=1;
-        printf("%d->%d\n",arr[k],count);
-    }
-   
+    printf("%d->%d",arr[k],count);
 }
+
 int main()
 {
     // int arr[10],i,res;
@@ -168,7 +186,7 @@ int main()
     // mergeArray(arr1,arr2,arr3,10);
     // for(i=0;i<20;i++)
     //   printf("%d ",arr3[i]);
-    int arr[]={2,3,4,5,6,7,8};
-    countFrequency(arr,7);
+    int arr[]={2,2,3,4,5,6,7,8};
+    countFrequency(arr,8);
     return 0;
 }
