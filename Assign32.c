@@ -1,16 +1,19 @@
 #include<stdio.h>
 int f1(int[],int,int,int);
 void mergeArray(int[],int[],int[],int);
+
 /*Q1.Write a function to swap two elements of given array with specified indices*/
 int f1(int arr[],int size,int index1,int index2)
 {
     int temp;
-    if(index1<size&&index2<size)
+    if(index1>=0&&index1<size&&index2>=0&&index2<size)
     {
         temp=arr[index1];
         arr[index1]=arr[index2];
         arr[index2]=temp;
+        return 1;
     }
+    return 0;
 }
 void sortArray(int a[],int size)
 {
@@ -180,13 +183,29 @@ int main()
     // res=countTotalNumberOfDuplicateElements(arr,10);
     // printf("Total number of duplicate elements\n");
     // printf("%d",res);
+
     // int arr1[10]={5,6,7,8,9,10,12,15,18,20};
     // int arr2[10]={19,25,28,29,30,32,35,40,45,50};
     // int arr3[20],i;
     // mergeArray(arr1,arr2,arr3,10);
     // for(i=0;i<20;i++)
     //   printf("%d ",arr3[i]);
-    int arr[]={2,2,3,4,5,6,7,8};
-    countFrequency(arr,8);
+
+    // int arr[]={2,2,3,4,5,6,7,8};
+    // countFrequency(arr,8);
+
+    int arr[]={5,8,9,10,12,14,13,18};
+    int i,id1=3,id2=4,res;
+    res=f1(arr,8,id1,id2);
+    if(res==1)
+    {
+        printf("After swapping at %d and %d,Array elements are:\n",id1,id2);
+        for(i=0;i<8;i++)
+        printf("%d ",arr[i]);
+    }
+    else
+    {
+        printf("Invalid index number");
+    }
     return 0;
 }
