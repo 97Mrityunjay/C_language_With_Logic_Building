@@ -1,9 +1,9 @@
 #include<stdio.h>
 void sumOfTwoMatrices(int[][3],int[][3],int[][3],int);
-void sumOfTwoMatrices(int arr1[][3],int arr2[][3],int arr3[][3],int size)
+void sumOfTwoMatrices(int arr1[][3],int arr2[][3],int arr3[][3],int n)
 {
     int i,j;
-    for(i=0;i<size;i++)
+    for(i=0;i<n;i++)
     {
         for(j=0;j<3;j++)
         {

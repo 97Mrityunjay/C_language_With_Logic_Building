@@ -1,7 +1,12 @@
 #include<stdio.h>
 int f1(int[],int,int,int);
 void mergeArray(int[],int[],int[],int);
-
+void sortArray(int[],int);
+int countTotalNumberOfDuplicateElements(int[],int);
+void printAllUniqueElements(int[],int);
+void Sort_Elements_In_Descending_Order(int[],int);
+void mergeArray(int[],int[],int[],int);
+void countFrequency(int[],int);
 /*Q1.Write a function to swap two elements of given array with specified indices*/
 int f1(int arr[],int size,int index1,int index2)
 {
