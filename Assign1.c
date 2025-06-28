@@ -1,10 +1,10 @@
 #include<stdio.h>
-/* //1. Write a program to print Hello Students on the screen
+//1. Write a program to print Hello Students on the screen
 int main()
 {
     printf("Hello Students");
     return 0;
-}*/
+}
 
 /*//2. Write a program to print Hello in the first line and students in the second line
 int main()
@@ -73,11 +73,11 @@ int main()
 }*/
 
 //10. WAP to find area of the circle. Take radius of circle from user as input
-int main()
-{
-    int r;
-    printf("Enter radius of the circle ");
-    scanf("%d",&r);
-    printf("Area of the circle is %0.2f",3.14*r*r);
-    return 0;
-}
+// int main()
+// {
+//     int r;
+//     printf("Enter radius of the circle ");
+//     scanf("%d",&r);
+//     printf("Area of the circle is %0.2f",3.14*r*r);
+//     return 0;
+// }
