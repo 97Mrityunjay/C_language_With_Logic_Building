@@ -75,7 +75,7 @@ void copyString()
     char s[50];
     int i;
     printf("Enter string\n");
-    fgets(s,50,stdin);
+    fgets(str,50,stdin);
     for(i=0;str[i];i++);
     str[i-1]='\0';
     for(i=0;str[i]!='\0';i++)
@@ -91,24 +91,23 @@ void copyString()
 /*Q5.Write a program to find first occurrence of a given character in given string*/
 void firstOccurrenceOfCharacter()
 {
-    int i,l;
+    int i;
     char s[30],ch;
     printf("Enter string\n");
     fgets(s,30,stdin);
     printf("Enter a character\n");
     scanf("%c",&ch);
-    for(l=0;s[l];l++);
-    s[l-1]='\0';
-    l--;
+    for(i=0;s[i];i++);
+    s[i-1]='\0';
     for(i=0;s[i];i++)
     {
         if(s[i]==ch)
          break;
     }
     if(s[i]!='\0')
-     printf("Character is found first time in given string at index %d",i);
+     printf("\'%c\' is found first time in given string at index %d",ch,i);
     else
-    printf("Character is not found in given string");
+    printf("\'%c\' is not found in given string",ch);
 }
 int main()
 {
