@@ -1,6 +1,6 @@
 #include<stdio.h>
 //1. Write a program to check whether a given number is positive, negative or zero 
-/*int main()
+int main()
 {
    int num;
    printf("Enter a number ");
@@ -12,7 +12,7 @@
    else
      printf("Zero");
   return 0;
-}*/
+}
 
 //2. Write a program to check whether a given character is an alphabet(Uppercase),an alphabet(lowercase),a digit or a special character
 /*int main()
